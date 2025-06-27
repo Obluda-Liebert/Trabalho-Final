@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Clínica LUZ</title>
+
+    <style>
+
+    @media (max-width: 767px) {
+        body {
+            font-size: 14px;
+        }
+
+        header, footer, button, section {
+            font-size: 14px;
+            margin-inline: 0;
+            border-radius: 0;
+        }
+
+        .row {
+            flex-direction: column;
+        }
+
+        .col-sm-4, .col-sm-8 {
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .agendamento-container {
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .form-control, .form-select {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 100000024px) {
+        body {
+            font-size: 16px;
+        }
+    }
+
+    body {
+        background-color: #b9b48c;
+    }
+    
+    header{
+        background-color: #504b37;
+
+        font-family: "Lora", serif;
+        font-optical-sizing:-webkit-search-results-button auto;
+        font-weight: 500;
+        font-style: normal;
+
+        color: #f8f3d8;
+        margin-top: 1.25%;
+        padding: 1.5%;
+        margin-inline: 2.5%;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+
+        text-align: center;
+    }
+
+    section {
+        background-color:#f0f0f0;
+        color: rgb(70, 70, 70);
+        text-align: center;
+        margin-inline: 2.5%;
+    }
+
+    article {
+        font-family: "Open Sans", sans-serif;
+        padding: 2.5%;
+        text-align: center;
+    }
+
+    footer{
+        background-color: #504b37;
+
+        font-family: "Lora", serif;
+        font-optical-sizing:-webkit-search-results-button auto;
+        font-weight: 500;
+        font-style: normal;
+        color: white;
+
+        padding: 1%;
+        margin-inline: 2.5%;
+
+        text-align: center;
+    }
+
+    button{
+        font-family: "Lora", serif;
+        font-optical-sizing:-webkit-search-results-button auto;
+        font-weight: 500;
+        font-style: normal;
+        font-size: larger;
+        color: #f8f3d8;
+
+        margin-top: 1.25%;
+        background-color: #000000;
+        color: #f8f3d8;
+        border-radius: 12px;
+        padding: .5%;
+        margin: .5%;
+    }
+
+    img, button {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    img:hover, button:hover {
+        transform: scale(1.02);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h1{
+        font-family: "Lora", serif;
+        font-optical-sizing:-webkit-search-results-button auto;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4 mb-3 mb-md-0">
+                <a href="PagInicial.html" rel="noopener noreferrer" class="d-block">
+                    <button style="background: none; border: none; font-size: 2.5rem; color: #f8f3d8;">Clínica LUZ</button>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-8 d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
+                <a href="Clinico.html" target="_blank" rel="noopener noreferrer" class="mb-2 mb-md-0 mx-md-1">
+                    <button>Procedimentos clínicos</button>
+                </a>
+                <a href="Cirurgico.html" target="_blank" rel="noopener noreferrer" class="mb-2 mb-md-0 mx-md-1">
+                    <button>Procedimentos cirúrgicos</button>
+                </a>
+                <a href="Estético.html" target="_blank" rel="noopener noreferrer" class="mb-2 mb-md-0 mx-md-1">
+                    <button>Procedimentos estéticos</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <article>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="agendamento-container">
+                    <div class="header-agendamento">
+                        <h1>Agendamento de Consulta</h1>
+                        <p>Preencha o formulário abaixo para agendar sua consulta na Clínica LUZ</p>
+                    </div>
+                    
+                    <form id="formAgendamento">
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="nome" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="data" class="form-label">Data desejada</label>
+                                <input type="date" class="form-control" id="data" style="text-align: center;" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="procedimento" class="form-label">Tipo de Procedimento</label>
+                            <select class="form-select" id="procedimento" required>
+                                <option value="" selected disabled style="text-align: center;">Selecione...</option>
+                                <option value="clinico">Clínico</option>
+                                <option value="cirurgico">Cirúrgico</option>
+                                <option value="estetico">Estético</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3" id="outroProcedimentoContainer" style="display: none;">
+                            <label for="outroProcedimento" class="form-label">Especifique o procedimento</label>
+                            <input type="text" class="form-control" id="outroProcedimento">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem/Observações</label>
+                            <textarea class="form-control" id="mensagem" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="confirmacao" required>
+                            <label class="form-check-label" for="confirmacao">Confirmo que as informações estão corretas</label>
+                        </div>
+                        
+                        <button type="submit" >AGENDAR CONSULTA</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar campo "Outro procedimento" quando selecionado
+        document.getElementById('procedimento').addEventListener('change', function() {
+            const outroContainer = document.getElementById('outroProcedimentoContainer');
+            outroContainer.style.display = this.value === 'outro' ? 'block' : 'none';
+            if (this.value !== 'outro') {
+                document.getElementById('outroProcedimento').value = '';
+            }
+        });
+
+        // Validação do formulário
+        document.getElementById('formAgendamento').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!this.checkValidity()) {
+                alert('Por favor, preencha todos os campos obrigatórios!');
+                return;
+            }
+
+            alert('Agendamento solicitado com sucesso! Entraremos em contato para confirmação.');
+            this.reset();
+            document.getElementById('outroProcedimentoContainer').style.display = 'none';
+        });
+
+        // Máscara para telefone
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.substring(0, 11);
+
+            if (value.length > 0) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                if (value.length > 10) {
+                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                } else {
+                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                }
+            }
+
+            e.target.value = value;
+        });
+    </script>
+
+    </article>
+</section>
+
+<footer style="background-color: rgb(120,120, 120); color: #e6e6e6; ">
+    <article style="text-align: center;">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1>Conheça nossa clínica:</h1>
+            </div>
+
+            <div class="col-sm-4">
+                <h1>XXXXXXXX - Brasília - DF</h1>
+            </div>
+
+            <div class="col-sm-4">
+                <a href="https://www.google.com/maps/place/CEUB/@-15.7673363,-47.8938762,544m/data=!3m1!1e3!4m6!3m5!1s0x935a3a46ff7ee93f:0xaceeb379d23571b7!8m2!3d-15.7669942!4d-47.893776!16s%2Fg%2F11xbyp16l!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                    <button style="background-color: rgb(90, 90, 90); border: none; font-size: xx-large; color: #f8f3d8; padding: 2%;">Localização</button>
+                </a>
+            </div>
+        </div>
+
+    </article>
+</footer>
+
+<footer style="border-bottom-left-radius:  12px; border-bottom-right-radius: 12px; margin-bottom: 1.25%;">
+    <p>Contato:</p>
+    <p>Telefone: 61 XXXXX-XXXX</p>
+    <p> Outras redes:</p>
+
+    <a href = "https://web.whatsapp.com/">
+        <img src="data:image/jpeg;base64,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" style="width: 42px; height: 42px;" alt = "WhatsApp">
+    </a>
+    
+    <a href="https://www.instagram.com">
+        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/14/instagram-6338393_640.png" style="width: 42px;height: 42px;" alt="Instagram">
+    </a>
+
+    <a href ="https://www.facebook.com">
+        <img src="data:image/png;base64,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" style="width: 42px;height: 42px;" alt="Facebook">
+    </a>
+</footer>
+</body>
+</html>
